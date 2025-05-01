@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10m-mail</title>
+    <style>
+        body {
+            background-color: #20B2AA;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .toggle {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to 10m-mail</h1>
+    <p>Your temporary inbox will be displayed here.</p>
+    <div class="toggle">
+        <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    </div>
+
+    <script>
+        function toggleMode() {
+            let body = document.body;
+            if (body.style.backgroundColor === "white") {
+                body.style.backgroundColor = "#20B2AA";
+                body.style.color = "white";
+            } else {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>
