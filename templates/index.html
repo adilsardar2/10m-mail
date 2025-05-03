@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10m-mail is live</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #0f3460;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .email {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background: #e94560;
+            border: none;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>10m-mail is live</h1>
+        <p>Email: <span class="email">{{ email }}</span></p>
+        <p>Expires in: 600 seconds</p>
+        <button onclick="window.location.reload()">Generate New Email</button>
+        <h3>Inbox</h3>
+        <p>No messages yet.</p>
+    </div>
+</body>
+</html>
