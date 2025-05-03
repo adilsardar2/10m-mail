@@ -17,8 +17,15 @@ def generate_email():
 def get_inbox_messages():
     messages = []
     for fname in os.listdir(INBOX_DIR):
-        with open(os.path.join(INBOX_DIR, fname), "r") as f:
-            messages.append(json.load(f))
+        fpath = os.path.join(INBOX_DIR, fname)
+        try:
+            with open(fpath, "r") as f:
+                content = f.read().strip()
+                if not content:
+                    continue  # Skip empty files
+                messages.append(json.loads(content))
+        except Exception as e:
+            print(f"Skipping invalid file {fname}: {e}")
     return messages
 
 @app.route("/")
