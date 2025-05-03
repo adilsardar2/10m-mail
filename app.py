@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import uuid
@@ -8,6 +7,7 @@ import json
 app = Flask(__name__)
 INBOX_DIR = "inbox"
 
+# Ensure the inbox directory exists
 if not os.path.exists(INBOX_DIR):
     os.makedirs(INBOX_DIR)
 
@@ -33,6 +33,7 @@ def receive_email():
     with open(os.path.join(INBOX_DIR, filename), "w") as f:
         json.dump(content, f)
     return {"status": "received"}, 200
-    if __name__ == "__main__":
-    import os
+
+# Run the app
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
